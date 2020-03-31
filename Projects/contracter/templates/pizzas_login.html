@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if user %}
+        <div class="login">
+            <header>
+                <h1>Already Signed In</h1>
+            </header>
+        </div>
+    {% else %}
+        <div class="login">
+            <header>
+                <h1>Login</h1>
+            </header>
+            <form method="POST" action="/user-login">
+                {% if error %}
+                    <div class="error"><p>Error, email or password not correct</p></div>
+                {% endif %}
+                <div class="form-row">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <label>Password</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div class="form-row">
+                    <button type="submit">Enter</button>
+                </div>
+                <p>Don't have an account? Registure <a href="/registure">here.</a></p>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

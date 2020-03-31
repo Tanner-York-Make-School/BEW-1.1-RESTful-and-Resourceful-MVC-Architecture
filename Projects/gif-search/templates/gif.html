@@ -1,0 +1,8 @@
+{% if not gifs %}
+        {% include 'error.html' %}
+{% endif %}
+{% for gif in gifs %}
+    <div class="gif-item">
+        <img src="{{gif['media'][0]['gif']['url']}}" />
+    </div>
+{% endfor %}

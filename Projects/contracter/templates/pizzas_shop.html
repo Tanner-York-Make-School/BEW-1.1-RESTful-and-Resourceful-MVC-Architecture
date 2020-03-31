@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for pizza in pizzas %}
+        {% include 'partials/pizza_item.html' %}
+    {% endfor %}
+{% endblock %}
